@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="images/music.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>music-player</title>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- Define the onSpotifyWebPlaybackSDKReady function -->
+    <script>
+      window.onSpotifyWebPlaybackSDKReady = () => {
+        console.log("Spotify Web Playback SDK is ready!");
+        // Initialize player here (you can add your player setup code)
+      };
+    </script>
+
+    <!-- Add the Spotify Web Playback SDK -->
+    <script
+      type="text/javascript"
+      src="https://sdk.scdn.co/spotify-player.js"
+      onload="onSpotifyWebPlaybackSDKReady()"
+      async
+    ></script>
+
+    <!-- Vite's script to run React app -->
+    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Example OpenCV setup -->
+    <script>
+      var Module = {
+        onRuntimeInitialized: function () {
+          console.log("✅ OpenCV.js is loaded and ready to use.");
+        },
+      };
+    </script>
+
+    <script async src="https://docs.opencv.org/4.5.2/opencv.js"></script>
+  </body>
+</html>
